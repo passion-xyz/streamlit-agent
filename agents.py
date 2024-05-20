@@ -56,6 +56,7 @@ class AICompanionAgent:
 class EntitiesExtractionAgent:
     def __init__(self, tools: List, is_agent_verbose: bool = False, max_iterations: int = 3, return_thought_process: bool = False):
         entities_extraction_message = SystemMessage(
+            # ToDo
             content=f"""Use your judgement and pick out the information you need from the human's new message, based on the following list of human's data:
             {entities}
             Use a tool to update the human's profile if new information is presented.

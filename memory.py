@@ -7,6 +7,7 @@ from llm import llm_non_stream
 messages_history = ChatMessageHistory()
 summaries = []
 entities = {
+    # ToDo
     "name": {
         "description": "This is the human's name. Human only has one name.",
         "content": [],
