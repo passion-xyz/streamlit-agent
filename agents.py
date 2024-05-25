@@ -4,7 +4,7 @@ from langchain.chains import LLMChain
 from langchain.agents import initialize_agent, AgentType
 from langchain.schema import SystemMessage
 from utils import convert_chat_history_to_normal_data_structure, format_messages_history, convert_entities_to_formatted_string
-from memory import messages_history, summarizer, entities, summaries
+from memory import messages_history, summarizer, summaries
 from llm import llm_non_stream
 
 
@@ -17,7 +17,7 @@ class AICompanionAgent:
         self.messages_history_counter = 0
         self.verbose = verbose
 
-    def talk(self, user_input: str):
+    def talk(self, user_input: str, entities):
         """
         The `talk` function takes user input, processes it through a conversation chain, adds the user
         input and AI response to the message history, and returns the AI response.
