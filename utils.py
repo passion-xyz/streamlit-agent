@@ -5,7 +5,7 @@ def convert_chat_history_to_normal_data_structure(input_list):
     output_list = []
     for message in input_list:
         if isinstance(message, HumanMessage):
-            sender = "Human"
+            sender = "User"
         elif isinstance(message, AIMessage):
             sender = "AI"
         else:
