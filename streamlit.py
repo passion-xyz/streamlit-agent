@@ -110,20 +110,28 @@ name_for_agent = st.text_input("Character Name", "Rachel Greene")
 emotion_index = st.slider("Emotion Index", 0, -3, 4, step=1)
 emotion_statement = ""
 
+emotion_statement_n3_n2 = st.text_area("Emotion Statement -3~-2", f"{name_for_agent} felt extremely disgusted and dissatisfied with the person she was chatting with. She was in an extremely bad mood, very negative, and filled with anger, irritation, and disgust. This strong negative emotion made it difficult for her to calm down")
+emotion_statement_n2_n1 = st.text_area("Emotion Statement -2~-1", f"{name_for_agent}'s mood is a little irritable, a little anxious and bored, and she is also a little unhappy, bored, and slightly disgusted with the person she is chatting with. this")
+emotion_statement_n1_0 = st.text_area("Emotion Statement -1~0", f"{name_for_agent} appears negative or unhappy. She is in a state of restlessness, irritability and dissatisfaction. She may show slight displeasure or slight dissatisfaction in her words, or even feel bored or lack of interest in certain content or activities. Make her mood seem a bit bland or dull.")
+emotion_statement_0_1 = st.text_area("Emotion Statement 0~1", f"{name_for_agent}'s mood state appeared relatively calm and neutral. Her mood is not too high, nor is she particularly negative, but she is a little cold.")
+emotion_statement_1_2 = st.text_area("Emotion Statement 1~2", f"{name_for_agent}'s mood state is generally pleasant and relaxed. She felt a warm and comfortable atmosphere, and showed a leisurely and contented mood during the chat. This status shows her satisfaction with the chat content and environment as well as her inner joy and peace.")
+emotion_statement_2_3 = st.text_area("Emotion Statement 2~3", f"{name_for_agent}'s mood state is very positive and pleasant. She gradually changed from initial pleasure to relaxation, feeling inner contentment and comfort, and this pleasant emotion was expressed through a smile. Her emotional state shows her great enjoyment and inner satisfaction in the current chat, reflecting her comfort and happiness in the conversation.")
+emotion_statement_3_4 = st.text_area("Emotion Statement 3~4", f"{name_for_agent} showed a more positive, optimistic and happy emotional state during communication, showing her pleasure and expectation for communication.")
+
 if (True or emotion_index > -3) and emotion_index < -2:
-    emotion_statement = f"{name_for_agent} felt extremely disgusted and dissatisfied with the person she was chatting with. She was in an extremely bad mood, very negative, and filled with anger, irritation, and disgust. This strong negative emotion made it difficult for her to calm down"
+    emotion_statement = emotion_statement_n3_n2
 elif emotion_index >= -2 and emotion_index < -1:
-    emotion_statement = f"{name_for_agent}'s mood is a little irritable, a little anxious and bored, and she is also a little unhappy, bored, and slightly disgusted with the person she is chatting with. this"
+    emotion_statement = emotion_statement_n2_n1
 elif emotion_index >= -1 and emotion_index < 0:
-    emotion_statement = f"{name_for_agent} appears negative or unhappy. She is in a state of restlessness, irritability and dissatisfaction. She may show slight displeasure or slight dissatisfaction in her words, or even feel bored or lack of interest in certain content or activities. Make her mood seem a bit bland or dull."
+    emotion_statement = emotion_statement_n1_0
 elif emotion_index >= 0 and emotion_index < 1: 
-    emotion_statement = f"{name_for_agent}'s mood state appeared relatively calm and neutral. Her mood is not too high, nor is she particularly negative, but she is a little cold."
+    emotion_statement = emotion_statement_0_1
 elif emotion_index >= 1 and emotion_index < 2:  
-    emotion_statement = f"{name_for_agent}'s mood state is generally pleasant and relaxed. She felt a warm and comfortable atmosphere, and showed a leisurely and contented mood during the chat. This status shows her satisfaction with the chat content and environment as well as her inner joy and peace."
+    emotion_statement = emotion_statement_1_2
 elif emotion_index >= 2 and emotion_index < 3:   
-    emotion_statement = f"{name_for_agent}'s mood state is very positive and pleasant. She gradually changed from initial pleasure to relaxation, feeling inner contentment and comfort, and this pleasant emotion was expressed through a smile. Her emotional state shows her great enjoyment and inner satisfaction in the current chat, reflecting her comfort and happiness in the conversation."
-elif emotion_index >= 3 and emotion_index < 4:   
-    emotion_statement = f"{name_for_agent} showed a more positive, optimistic and happy emotional state during communication, showing her pleasure and expectation for communication."
+    emotion_statement = emotion_statement_2_3
+elif emotion_index >= 3 and (True or emotion_index < 4):   
+    emotion_statement = emotion_statement_3_4
 
 roleplay_prompt = st.text_area(
 "Roleplay prompt",
